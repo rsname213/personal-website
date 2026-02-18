@@ -1,49 +1,66 @@
 /* =====================================================
    SPA ROUTING
    ===================================================== */
-const SECTIONS = ['hello', 'about', 'investments', 'experience', 'ai', 'contact'];
+const SECTIONS = ['hello', 'about', 'investments', 'collection', 'contact'];
 let currentSection  = null;
 let isTransitioning = false;
 let firstLoad       = true;
 
 const pageWipe = document.getElementById('pageWipe');
 
+function spawnNavClone(fromEl, targetId) {
+  const targetSection = document.getElementById(targetId);
+  if (!targetSection) return;
+
+  // Briefly make the section measurable (fixed + invisible so layout isn't disrupted)
+  targetSection.style.cssText = 'display:block;visibility:hidden;position:fixed;top:0;left:0;width:100%;pointer-events:none;z-index:-1;';
+  const h2El = targetSection.querySelector('.section-header h2');
+  if (!h2El) { targetSection.style.cssText = ''; return; }
+
+  const fromRect = fromEl.getBoundingClientRect();
+  const h2Rect   = h2El.getBoundingClientRect();
+  targetSection.style.cssText = '';
+
+  // Target = the blue left border stripe on the h2 (6px wide, full h2 height)
+  const targetLeft   = h2Rect.left;
+  const targetTop    = h2Rect.top;
+  const targetWidth  = 6;
+  const targetHeight = h2Rect.height;
+
+  // Create a blue clone at the nav element's position
+  const clone = document.createElement('div');
+  clone.style.cssText = [
+    'position:fixed',
+    `left:${fromRect.left}px`,
+    `top:${fromRect.top}px`,
+    `width:${fromRect.width}px`,
+    `height:${fromRect.height}px`,
+    `background:${getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#2196f3'}`,
+    'border-radius:8px',
+    'z-index:250',               // sits BELOW the page wipe (z-index 300)
+    'pointer-events:none',
+    'will-change:left,top,width,height',
+    'transition:left .35s cubic-bezier(.19,1,.22,1),top .35s cubic-bezier(.19,1,.22,1),width .35s cubic-bezier(.19,1,.22,1),height .35s cubic-bezier(.19,1,.22,1),border-radius .35s ease',
+  ].join(';');
+  document.body.appendChild(clone);
+
+  // Next two frames: morph clone into the thin blue left-border stripe of the h2
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    clone.style.left         = targetLeft   + 'px';
+    clone.style.top          = targetTop    + 'px';
+    clone.style.width        = targetWidth  + 'px';
+    clone.style.height       = targetHeight + 'px';
+    clone.style.borderRadius = '0';
+  }));
+
+  // Remove once the wipe has fully covered the screen
+  setTimeout(() => clone.remove(), 420);
+}
+
 function navigate(id, fromEl) {
   if (!SECTIONS.includes(id)) id = 'hello';
   if (id === currentSection) { closeNav(); return; }
   if (isTransitioning) return;
-
-  // Capture clone position BEFORE closing nav (overlay may be open)
-  let clone = null;
-  if (fromEl && !firstLoad) {
-    const iconEl = fromEl.querySelector('.icon i');
-    const rect   = fromEl.getBoundingClientRect();
-
-    clone = document.createElement('div');
-    clone.className = 'nav-clone';
-    Object.assign(clone.style, {
-      left: rect.left + 'px',
-      top:  rect.top  + 'px',
-      width:  rect.width  + 'px',
-      height: rect.height + 'px',
-      transition: 'none'
-    });
-    if (iconEl) clone.innerHTML = `<i class="${iconEl.className}"></i>`;
-    document.body.appendChild(clone);
-
-    // Calculate container left edge (heading will land here)
-    const vw = window.innerWidth;
-    const containerLeft = Math.max(40, (vw - 1200) / 2 + 40);
-
-    // Phase 1 flight: icon flies as compact box toward heading position
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      clone.style.transition = '';
-      clone.style.left   = containerLeft + 'px';
-      clone.style.top    = '115px';   // header (75px) + section padding-top (40px)
-      clone.style.width  = '50px';
-      clone.style.height = '50px';
-    }));
-  }
 
   closeNav();
 
@@ -71,6 +88,10 @@ function navigate(id, fromEl) {
 
   isTransitioning = true;
 
+  // Nav-clone: blue box flies from clicked element → target section's header bar
+  // Kept at z-index 250 (below the page wipe at 300) so the wipe covers it cleanly
+  if (fromEl) spawnNavClone(fromEl, id);
+
   // Phase 1: dark bar sweeps left → right (350ms)
   pageWipe.classList.remove('wipe--out');
   pageWipe.classList.add('wipe--in');
@@ -78,31 +99,6 @@ function navigate(id, fromEl) {
   setTimeout(() => {
     // Phase 2: swap section while screen is covered
     doSwitch(id, next);
-
-    // Contract clone to the heading's border-left shape (instant, behind the wipe)
-    if (clone) {
-      const h2El = next.querySelector('.section-header h2');
-      if (h2El) {
-        const h2Rect = h2El.getBoundingClientRect();
-        clone.innerHTML = '';              // remove icon — just a blue sliver
-        clone.style.transition = 'none';  // instant jump — wipe is covering the screen
-        clone.style.left   = h2Rect.left + 'px';
-        clone.style.top    = h2Rect.top  + 'px';
-        clone.style.width  = '6px';
-        clone.style.height = h2Rect.height + 'px';
-        // Fade after barReveal has started — bar immediately sweeps past the 6px clone
-        setTimeout(() => {
-          clone.style.transition = 'opacity .2s ease';
-          clone.style.opacity = '0';
-          setTimeout(() => clone.remove(), 250);
-        }, 150);
-      } else {
-        // Hello section (no section-header h2) — just fade out
-        clone.style.transition = 'opacity .2s ease';
-        clone.style.opacity = '0';
-        setTimeout(() => clone.remove(), 250);
-      }
-    }
 
     // Phase 3: dark bar sweeps right → off (400ms)
     pageWipe.classList.remove('wipe--in');
@@ -135,7 +131,10 @@ function doSwitch(id, next) {
 
 function triggerAnims(section) {
   const els = section.querySelectorAll('[data-anim]');
-  els.forEach(el => el.classList.remove('anim-done'));
+  // Don't reset the section-header — its bar/text animation should stay visible
+  els.forEach(el => {
+    if (!el.classList.contains('section-header')) el.classList.remove('anim-done');
+  });
 
   requestAnimationFrame(() => {
     els.forEach((el, i) => {
@@ -314,6 +313,45 @@ window.addEventListener('scroll', () => {
   }
   lastScrollY = y;
 }, { passive: true });
+
+
+/* =====================================================
+   THEME PANEL
+   ===================================================== */
+(function initThemePanel() {
+  const btn   = document.getElementById('themeBtn');
+  const panel = document.getElementById('themePanel');
+  if (!btn || !panel) return;
+
+  // ── Open / close ──────────────────────────────────
+  let panelOpen = false;
+  function openPanel()  { panelOpen = true;  panel.classList.add('open');    panel.setAttribute('aria-hidden', 'false'); }
+  function closePanel() { panelOpen = false; panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true');  }
+
+  btn.addEventListener('click', e => { e.stopPropagation(); panelOpen ? closePanel() : openPanel(); });
+  document.addEventListener('click', e => { if (panelOpen && !panel.contains(e.target)) closePanel(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && panelOpen) closePanel(); });
+
+  // ── Apply a preset ────────────────────────────────
+  function applyPreset(accent, bg, text) {
+    const root = document.documentElement;
+    root.style.setProperty('--accent', accent);
+    root.style.setProperty('--bg',     bg);
+    root.style.setProperty('--text',   text);
+    // Keep split-circle button in sync
+    document.querySelector('.theme-btn__top').style.background    = accent;
+    document.querySelector('.theme-btn__bottom').style.background = bg;
+  }
+
+  // ── Preset buttons ────────────────────────────────
+  panel.querySelectorAll('.theme-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      panel.querySelectorAll('.theme-preset').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyPreset(btn.dataset.accent, btn.dataset.bg, btn.dataset.text);
+    });
+  });
+})();
 
 
 /* =====================================================

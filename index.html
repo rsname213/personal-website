@@ -18,6 +18,12 @@
     <div class="header__inner">
       <a href="#hello" class="header__logo" data-section="hello"><span class="logo-bracket">&lt;/&gt;</span> NS</a>
 
+      <!-- Theme button (split-circle) -->
+      <button class="theme-btn" id="themeBtn" aria-label="Customise theme" title="Customise theme">
+        <span class="theme-btn__top"></span>
+        <span class="theme-btn__bottom"></span>
+      </button>
+
       <!-- 4-corner hamburger button -->
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
         <span class="box tl"></span>
@@ -53,15 +59,9 @@
           </a>
         </li>
         <li>
-          <a href="#experience" class="element-box" data-section="experience">
-            <span class="text"><span class="abbr" aria-hidden="true">Ex</span><span class="full">Experience</span></span>
-            <span class="icon"><i class="fa-solid fa-briefcase"></i></span>
-          </a>
-        </li>
-        <li>
-          <a href="#ai" class="element-box" data-section="ai">
-            <span class="text"><span class="abbr" aria-hidden="true">AI</span><span class="full">AI &amp; Tech</span></span>
-            <span class="icon"><i class="fa-solid fa-microchip"></i></span>
+          <a href="#collection" class="element-box" data-section="collection">
+            <span class="text"><span class="abbr" aria-hidden="true">Cl</span><span class="full">Collection</span></span>
+            <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
           </a>
         </li>
         <li>
@@ -83,16 +83,14 @@
         <div class="hello-col">
 
           <!-- H1: typing animation (Niño's exact pattern) -->
-          <h1 class="hello-h1" data-anim>
+          <h1 class="hello-h1">
             <span class="hello-text" id="helloTyped"></span><span class="typed-cursor">_</span>
           </h1>
 
           <!-- Bio paragraph 1: name + intro -->
           <p class="hello-bio" data-anim>
             I'm <a href="#about" class="inline-link" data-section="about" data-text="Neel Sibal"><span>Neel Sibal</span></a>,
-            a private equity investor and AI Technology Lead at The Olayan Group, a global family
-            office managing $40B+ across venture, growth equity, and public markets. I've deployed
-            $300M+ across eight closed transactions, including Anthropic, Databricks, and Cohere.
+            an investor in AI and Technology at The Olayan Group, a global investment office investing across private equity, venture / growth equity, and public markets.
           </p>
 
           <!-- Bio paragraph 2: navigation links (Niño's style) -->
@@ -101,15 +99,14 @@
             <a href="#investments" class="inline-link" data-section="investments" data-text="investment portfolio"><span>investment portfolio</span></a>,
             learn more
             <a href="#about" class="inline-link" data-section="about" data-text="about me"><span>about me</span></a>,
-            my
-            <a href="#experience" class="inline-link" data-section="experience" data-text="experience"><span>experience</span></a>,
-            and how I use
-            <a href="#ai" class="inline-link" data-section="ai" data-text="AI & tech"><span>AI &amp; tech</span></a>.
+            or browse my
+            <a href="#collection" class="inline-link" data-section="collection" data-text="collection"><span>collection</span></a>
+            of things I find interesting.
           </p>
 
           <hr class="hello-hr" data-anim>
 
-          <!-- 5-box grid (Hello omitted — you're already here) -->
+          <!-- 4-box grid (Hello omitted — you're already here) -->
           <nav class="hello-nav" data-anim>
             <ul>
               <li>
@@ -125,15 +122,9 @@
                 </a>
               </li>
               <li>
-                <a href="#experience" class="element-box element-box--light" data-section="experience">
-                  <span class="text"><span class="abbr" aria-hidden="true">Ex</span><span class="full">Experience</span></span>
-                  <span class="icon"><i class="fa-solid fa-briefcase"></i></span>
-                </a>
-              </li>
-              <li>
-                <a href="#ai" class="element-box element-box--light" data-section="ai">
-                  <span class="text"><span class="abbr" aria-hidden="true">AI</span><span class="full">AI &amp; Tech</span></span>
-                  <span class="icon"><i class="fa-solid fa-microchip"></i></span>
+                <a href="#collection" class="element-box element-box--light" data-section="collection">
+                  <span class="text"><span class="abbr" aria-hidden="true">Cl</span><span class="full">Collection</span></span>
+                  <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
                 </a>
               </li>
               <li>
@@ -155,146 +146,53 @@
         <div class="section-header" data-anim>
           <h2><span class="text">// about</span><span class="bar"><i class="fa-solid fa-user"></i></span></h2>
         </div>
-        <div class="about-grid">
-          <div class="about-bio">
-            <p class="lead" data-anim>
-              I'm a private equity investor focused on technology and AI, currently at
-              <a href="https://olayan.com" target="_blank" rel="noopener" class="inline-link" data-text="The Olayan Group"><span>The Olayan Group</span></a>,
-              a global family office managing $40+ billion across private equity, venture, growth equity, and public markets.
-            </p>
-            <p data-anim>
-              My work sits at the intersection of sophisticated financial analysis and deep technology understanding. I lead the firm's AI-focused investment strategy, evaluating 100+ opportunities across foundation models, enterprise AI, and AI-enabled services.
-            </p>
-            <p data-anim>
-              Before Olayan, I spent three years at
-              <a href="https://www.jpmorgan.com" target="_blank" rel="noopener" class="inline-link" data-text="J.P. Morgan"><span>J.P. Morgan</span></a>
-              in Leveraged Finance, building expertise in credit analysis, deal structuring, and capital markets.
-            </p>
-
-            <div class="about-globe" data-anim>
-              <h3 class="sub-heading">A Life Well-Traveled</h3>
-              <p>Born in Indonesia, raised across four continents, my perspective on global markets is firsthand, not theoretical.</p>
-              <div class="city-trail">
-                <span class="city">Jakarta <em>Born</em></span>
-                <span class="arrow">→</span>
-                <span class="city">India</span>
-                <span class="arrow">→</span>
-                <span class="city">Dubai</span>
-                <span class="arrow">→</span>
-                <span class="city">Singapore</span>
-                <span class="arrow">→</span>
-                <span class="city">Hong Kong</span>
-                <span class="arrow">→</span>
-                <span class="city">Pittsburgh</span>
-                <span class="arrow">→</span>
-                <span class="city city--now">New York <em>Now</em></span>
-              </div>
-              <p class="lang-note">English · Hindi · Bahasa Indonesia</p>
-            </div>
-
-            <div class="about-edu" data-anim>
-              <h3 class="sub-heading">Education</h3>
-              <div class="edu-card">
-                <div class="edu-school">Carnegie Mellon University</div>
-                <div class="edu-degree">B.S. Quantitative Research &nbsp;·&nbsp; 2014–2018</div>
-                <div class="edu-detail">GPA 3.7/4.0 &nbsp;·&nbsp; University Honors</div>
-                <div class="edu-courses">Probability Theory &nbsp;·&nbsp; Machine Learning &nbsp;·&nbsp; Decision Analysis &nbsp;·&nbsp; Statistical Visualization</div>
-              </div>
-            </div>
-
-            <div class="about-certs" data-anim>
-              <h3 class="sub-heading">Certifications</h3>
-              <div class="cert-list">
-                <span class="pill">FINRA Series 79</span>
-                <span class="pill">Series 7</span>
-                <span class="pill">Series 63</span>
-              </div>
-            </div>
+        <div class="about-content">
+          <div class="about-block" data-anim>
+            <p class="about-label">currently</p>
+            <ul class="about-bullets">
+              <li>
+                Investor in AI and Technology at
+                <a href="https://olayan.com" target="_blank" rel="noopener" class="inline-link" data-text="The Olayan Group"><span>The Olayan Group</span></a>,
+                a global investment office investing across private equity, venture / growth equity, and public markets.
+              </li>
+              <li>
+                Spend a majority of my time focused on AI infrastructure within the hardware and software layer.
+              </li>
+            </ul>
           </div>
 
-          <div class="about-skills">
-            <h3 class="sub-heading" data-anim>Expertise</h3>
-            <div class="skills-list" id="skillsList">
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="95">
-                    <span class="skill-name">Investment Analysis</span>
-                    <span class="skill-pct">95%</span>
-                  </div>
+          <div class="about-block" data-anim>
+            <p class="about-label">previously</p>
+            <ul class="about-bullets">
+              <li>
+                <a href="https://www.jpmorgan.com" target="_blank" rel="noopener" class="inline-link" data-text="J.P. Morgan"><span>J.P. Morgan</span></a>
+                in Investment Banking, focused on credit analysis, deal structuring, and capital markets.
+              </li>
+              <li>
+                <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="inline-link" data-text="Carnegie Mellon"><span>Carnegie Mellon University</span></a>,
+                Bachelor of Science in Quantitative Research — being surrounded by some of the best engineers and researchers in the world is where my obsession with technology really took root.
+              </li>
+              <li>
+                Born in Indonesia, raised across four continents — my perspective on global markets is firsthand, not theoretical.
+                <div class="city-trail">
+                  <span class="city">Jakarta <em>Born</em></span>
+                  <span class="arrow">→</span>
+                  <span class="city">India</span>
+                  <span class="arrow">→</span>
+                  <span class="city">Dubai</span>
+                  <span class="arrow">→</span>
+                  <span class="city">Singapore</span>
+                  <span class="arrow">→</span>
+                  <span class="city">Hong Kong</span>
+                  <span class="arrow">→</span>
+                  <span class="city">Pittsburgh</span>
+                  <span class="arrow">→</span>
+                  <span class="city city--now">New York <em>Now</em></span>
                 </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="95">
-                    <span class="skill-name">Financial Modeling &amp; Valuation</span>
-                    <span class="skill-pct">95%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="90">
-                    <span class="skill-name">AI / ML Technology Evaluation</span>
-                    <span class="skill-pct">90%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="90">
-                    <span class="skill-name">Venture &amp; Growth Equity</span>
-                    <span class="skill-pct">90%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="85">
-                    <span class="skill-name">Deal Origination &amp; Sourcing</span>
-                    <span class="skill-pct">85%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="80">
-                    <span class="skill-name">Credit Analysis &amp; Structuring</span>
-                    <span class="skill-pct">80%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skill-item" data-anim>
-                <div class="skill-track">
-                  <div class="skill-bar" data-pct="75">
-                    <span class="skill-name">Python &amp; Data Science</span>
-                    <span class="skill-pct">75%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-tools" data-anim>
-              <h3 class="sub-heading">Tools</h3>
-              <div class="tools-grid">
-                <span class="tool-box">Capital IQ</span>
-                <span class="tool-box">PitchBook</span>
-                <span class="tool-box">Bloomberg</span>
-                <span class="tool-box">DealCloud</span>
-                <span class="tool-box">Python</span>
-                <span class="tool-box">Claude Code</span>
-              </div>
-            </div>
-
-            <div class="about-interests" data-anim>
-              <h3 class="sub-heading">Outside the Office</h3>
-              <div class="cert-list">
-                <span class="pill">Padel</span>
-                <span class="pill">Golf</span>
-                <span class="pill">Skiing</span>
-                <span class="pill">Arsenal F.C.</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -306,8 +204,8 @@
           <h2><span class="text">// investments</span><span class="bar"><i class="fa-solid fa-chart-line"></i></span></h2>
         </div>
         <p class="section-intro" data-anim>
-          Selected deal experience deploying $300M+ across venture, growth equity, and private equity,
-          with a pronounced focus on AI, foundation models, and technology-enabled services.
+          I've been lucky to invest in and partner with great companies across AI infrastructure,
+          foundation models, and technology-enabled services.
         </p>
 
         <ul class="invest-grid" id="investGrid">
@@ -315,15 +213,12 @@
           <li data-anim>
             <div class="achv-box">
               <div class="achv-inner">
-                <a href="https://radpartners.com" target="_blank" rel="noopener" class="achv-company">Radiology Partners</a>
-                <div class="achv-amount">$150M</div>
-                <div class="achv-round">Conv. Preferred Equity</div>
-                <p class="achv-desc">Largest U.S. radiology practice. Largest single transaction at the firm.</p>
+                <a href="https://anthropic.com" target="_blank" rel="noopener" class="achv-company">Anthropic</a>
+                <p class="achv-desc">AI safety company and developer of Claude, building reliable, interpretable AI at the frontier.</p>
+                <img class="achv-logo" src="https://cdn.simpleicons.org/anthropic" alt="Anthropic logo" onerror="this.src='https://www.google.com/s2/favicons?domain=anthropic.com&sz=64';this.onerror=null">
               </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
               <div class="ui-pattern"></div>
             </div>
           </li>
@@ -332,62 +227,11 @@
             <div class="achv-box">
               <div class="achv-inner">
                 <a href="https://databricks.com" target="_blank" rel="noopener" class="achv-company">Databricks</a>
-                <div class="achv-amount">$50M</div>
-                <div class="achv-round">Series J</div>
                 <p class="achv-desc">Enterprise data and AI platform. The backbone of modern data infrastructure at scale.</p>
+                <img class="achv-logo" src="https://cdn.simpleicons.org/databricks" alt="Databricks logo" onerror="this.src='https://www.google.com/s2/favicons?domain=databricks.com&sz=64';this.onerror=null">
               </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
-              <div class="ui-pattern"></div>
-            </div>
-          </li>
-
-          <li data-anim>
-            <div class="achv-box">
-              <div class="achv-inner">
-                <a href="https://corrohealth.com" target="_blank" rel="noopener" class="achv-company">CorroHealth</a>
-                <div class="achv-amount">$50M</div>
-                <div class="achv-round">LBO Co-Invest</div>
-                <p class="achv-desc">Tech-enabled healthcare RCM. Co-invested alongside Patient Square Capital in leveraged buyout.</p>
-              </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
-              <div class="ui-pattern"></div>
-            </div>
-          </li>
-
-          <li data-anim>
-            <div class="achv-box">
-              <div class="achv-inner">
-                <a href="https://anthropic.com" target="_blank" rel="noopener" class="achv-company">Anthropic</a>
-                <div class="achv-amount">$25M</div>
-                <div class="achv-round">Series F</div>
-                <p class="achv-desc">AI safety company and developer of Claude, building reliable, interpretable AI at the frontier.</p>
-              </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
-              <div class="ui-pattern"></div>
-            </div>
-          </li>
-
-          <li data-anim>
-            <div class="achv-box">
-              <div class="achv-inner">
-                <a href="https://strivehealth.com" target="_blank" rel="noopener" class="achv-company">Strive Health</a>
-                <div class="achv-amount">$25M</div>
-                <div class="achv-round">Series D + E</div>
-                <p class="achv-desc">Tech-enabled value-based kidney care for CKD and ESRD patients, reducing hospitalizations.</p>
-              </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
               <div class="ui-pattern"></div>
             </div>
           </li>
@@ -396,14 +240,24 @@
             <div class="achv-box">
               <div class="achv-inner">
                 <a href="https://cohere.com" target="_blank" rel="noopener" class="achv-company">Cohere</a>
-                <div class="achv-amount">$15M</div>
-                <div class="achv-round">Series D</div>
                 <p class="achv-desc">Sovereign enterprise AI, LLMs deployed within the client's own secure infrastructure.</p>
+                <img class="achv-logo" src="https://www.google.com/s2/favicons?domain=cohere.com&sz=64" alt="Cohere logo">
               </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
+              <div class="ui-pattern"></div>
+            </div>
+          </li>
+
+          <li data-anim>
+            <div class="achv-box">
+              <div class="achv-inner">
+                <a href="https://invisible.co" target="_blank" rel="noopener" class="achv-company">Invisible Technologies</a>
+                <p class="achv-desc">AI-powered services platform handling complex, judgment-intensive enterprise workflows at scale.</p>
+                <img class="achv-logo" src="https://www.google.com/s2/favicons?domain=invisible.co&sz=64" alt="Invisible Technologies logo">
+              </div>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
               <div class="ui-pattern"></div>
             </div>
           </li>
@@ -412,14 +266,11 @@
             <div class="achv-box">
               <div class="achv-inner">
                 <a href="https://nexthop.ai" target="_blank" rel="noopener" class="achv-company">Nexthop</a>
-                <div class="achv-amount">$10M</div>
-                <div class="achv-round">Series B</div>
                 <p class="achv-desc">AI-native networking switches built for high-throughput training and inference workloads.</p>
+                <img class="achv-logo" src="https://www.google.com/s2/favicons?domain=nexthop.ai&sz=64" alt="Nexthop logo">
               </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
               <div class="ui-pattern"></div>
             </div>
           </li>
@@ -427,15 +278,38 @@
           <li data-anim>
             <div class="achv-box">
               <div class="achv-inner">
-                <a href="https://invisible.co" target="_blank" rel="noopener" class="achv-company">Invisible Tech</a>
-                <div class="achv-amount">$10M</div>
-                <div class="achv-round">Conv. Preferred</div>
-                <p class="achv-desc">AI-powered services platform handling complex, judgment-intensive enterprise workflows at scale.</p>
+                <a href="https://radpartners.com" target="_blank" rel="noopener" class="achv-company">Radiology Partners</a>
+                <p class="achv-desc">Largest U.S. radiology practice.</p>
+                <img class="achv-logo" src="https://www.google.com/s2/favicons?domain=radpartners.com&sz=64" alt="Radiology Partners logo">
               </div>
-              <span class="ui-c tl"></span>
-              <span class="ui-c tr"></span>
-              <span class="ui-c bl"></span>
-              <span class="ui-c br"></span>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
+              <div class="ui-pattern"></div>
+            </div>
+          </li>
+
+          <li data-anim>
+            <div class="achv-box">
+              <div class="achv-inner">
+                <a href="https://corrohealth.com" target="_blank" rel="noopener" class="achv-company">CorroHealth</a>
+                <p class="achv-desc">Tech-enabled healthcare revenue cycle management.</p>
+                <img class="achv-logo" src="https://www.google.com/s2/favicons?domain=corrohealth.com&sz=64" alt="CorroHealth logo">
+              </div>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
+              <div class="ui-pattern"></div>
+            </div>
+          </li>
+
+          <li data-anim>
+            <div class="achv-box">
+              <div class="achv-inner">
+                <a href="https://strivehealth.com" target="_blank" rel="noopener" class="achv-company">Strive Health</a>
+                <p class="achv-desc">Tech-enabled value-based kidney care for CKD and ESRD patients, reducing hospitalizations.</p>
+                <img class="achv-logo" src="https://strivehealth.com/wp-content/uploads/2022/09/main-logo-1.svg" alt="Strive Health logo">
+              </div>
+              <span class="ui-c tl"></span><span class="ui-c tr"></span>
+              <span class="ui-c bl"></span><span class="ui-c br"></span>
               <div class="ui-pattern"></div>
             </div>
           </li>
@@ -444,185 +318,152 @@
       </div>
     </section>
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" class="section section--experience">
+    <!-- ===== COLLECTION ===== -->
+    <section id="collection" class="section section--collection">
       <div class="container">
         <div class="section-header" data-anim>
-          <h2><span class="text">// experience</span><span class="bar"><i class="fa-solid fa-briefcase"></i></span></h2>
+          <h2><span class="text">// collection</span><span class="bar"><i class="fa-solid fa-bookmark"></i></span></h2>
         </div>
+        <p class="section-intro" data-anim>Things I keep coming back to.</p>
 
-        <div class="timeline">
+        <div class="coll-content">
 
-          <div class="tl-item tl-item--current" data-anim>
-            <div class="tl-marker"></div>
-            <div class="tl-card">
-              <div class="tl-card__header">
-                <div>
-                  <div class="tl-role">Private Equity, AI &amp; Technology Lead</div>
-                  <a href="https://olayan.com" target="_blank" rel="noopener" class="tl-firm">The Olayan Group</a>
-                  <div class="tl-meta">New York, NY &nbsp;·&nbsp; 2022 – Present</div>
-                  <p class="tl-firm-desc">Global private investment firm managing $40+ billion across private equity, venture, growth equity, and public markets</p>
-                </div>
-              </div>
-              <ul class="tl-bullets">
-                <li>Lead the firm's AI-focused venture and growth equity strategy, sourcing and evaluating <strong>100+ opportunities</strong> across foundation models, enterprise AI, and AI-enabled services, deploying <strong>$300+ million</strong> across eight closed transactions.</li>
-                <li>Co-lead the internal <strong>AI Taskforce</strong> across four workstreams: education, investment, improvement, and protection.</li>
-                <li>Drive end-to-end diligence on VC/growth &amp; buyout deals, financial modeling, valuation, unit economics, technology stack evaluation, and IC materials.</li>
-                <li>Redesigned the firm's CRM on <strong>DealCloud</strong> and built agentic <strong>MCP connectors</strong> enabling investment professionals to programmatically query deal flow, portfolio metrics, and market intelligence.</li>
-              </ul>
-            </div>
+          <div class="coll-block" data-anim>
+            <p class="coll-label">articles to ponder on</p>
+            <ul class="coll-list">
+              <li>
+                <a href="https://darioamodei.com/machines-of-loving-grace" target="_blank" rel="noopener" class="coll-link">Machines of Loving Grace</a>
+                <span class="coll-meta">Dario Amodei</span>
+              </li>
+              <li>
+                <a href="https://ia.samaltman.com" target="_blank" rel="noopener" class="coll-link">The Intelligence Age</a>
+                <span class="coll-meta">Sam Altman</span>
+              </li>
+              <li>
+                <a href="https://situational-awareness.ai" target="_blank" rel="noopener" class="coll-link">Situational Awareness</a>
+                <span class="coll-meta">Leopold Aschenbrenner</span>
+              </li>
+              <li>
+                <a href="https://www.sequoiacap.com/article/ais-600b-question/" target="_blank" rel="noopener" class="coll-link">AI's $600B Question</a>
+                <span class="coll-meta">Sequoia Capital</span>
+              </li>
+              <li>
+                <a href="http://incompleteideas.net/IncIdeas/BitterLesson.html" target="_blank" rel="noopener" class="coll-link">The Bitter Lesson</a>
+                <span class="coll-meta">Rich Sutton</span>
+              </li>
+              <li>
+                <a href="https://stratechery.com/2023/ai-and-the-big-five/" target="_blank" rel="noopener" class="coll-link">AI and the Big Five</a>
+                <span class="coll-meta">Ben Thompson, Stratechery</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="tl-item" data-anim>
-            <div class="tl-marker"></div>
-            <div class="tl-card">
-              <div class="tl-card__header">
-                <div>
-                  <div class="tl-role">Investment Banking Analyst, Leveraged Finance</div>
-                  <a href="https://www.jpmorgan.com" target="_blank" rel="noopener" class="tl-firm">J.P. Morgan</a>
-                  <div class="tl-meta">New York, NY &nbsp;·&nbsp; 2019 – 2022</div>
-                  <p class="tl-firm-desc">Internal transfer from Sales &amp; Trading to Investment Banking</p>
-                </div>
-              </div>
-              <ul class="tl-bullets">
-                <li>Built financial models and performed credit analysis across leveraged buyouts, refinancings, and dividend recapitalizations.</li>
-                <li>Produced CIMs, investor/lender presentations, and marketing materials for high-yield bond and leveraged loan offerings across industrials, technology, and healthcare.</li>
-                <li>Managed end-to-end due diligence coordinating across legal, accounting, and commercial advisors.</li>
-              </ul>
-              <div class="tl-deals">
-                <div class="tl-deals__label">Selected Transactions</div>
-                <ul>
-                  <li><strong>$330M LBO</strong> of The New Home Company for Apollo Global Management, Lead-Left Bookrunner</li>
-                  <li><strong>$220M 1st Lien Notes</strong> for GameStop via $415M Unsecured Note Uptier Exchange, Lead-Left Dealer Manager</li>
-                  <li><strong>$750M Unsecured Notes</strong> for L Brands, Lead-Left Bookrunner</li>
-                </ul>
-              </div>
-            </div>
+          <div class="coll-block" data-anim>
+            <p class="coll-label">favorite blogs</p>
+            <ul class="coll-list">
+              <li>
+                <a href="https://boz.com" target="_blank" rel="noopener" class="coll-link">Boz</a>
+                <span class="coll-meta">Andrew Bosworth — honest writing on leadership, tech, and building at scale</span>
+              </li>
+              <li>
+                <a href="https://tomtunguz.com" target="_blank" rel="noopener" class="coll-link">Tom Tunguz</a>
+                <span class="coll-meta">Data-driven takes on startups, SaaS, and venture</span>
+              </li>
+              <li>
+                <a href="https://darioamodei.com" target="_blank" rel="noopener" class="coll-link">Dario Amodei</a>
+                <span class="coll-meta">Rare, thoughtful essays on AI safety and what's actually coming</span>
+              </li>
+              <li>
+                <a href="https://calv.info" target="_blank" rel="noopener" class="coll-link">Calvin</a>
+                <span class="coll-meta">Niche tech writing worth reading slowly</span>
+              </li>
+              <li>
+                <a href="https://paulgraham.com" target="_blank" rel="noopener" class="coll-link">Paul Graham</a>
+                <span class="coll-meta">Essays on startups, founders, and how the world actually works</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="tl-item" data-anim>
-            <div class="tl-marker"></div>
-            <div class="tl-card">
-              <div class="tl-card__header">
-                <div>
-                  <div class="tl-role">Sales &amp; Trading Analyst, Credit Insurance Solutions</div>
-                  <a href="https://www.jpmorgan.com" target="_blank" rel="noopener" class="tl-firm">J.P. Morgan</a>
-                  <div class="tl-meta">New York, NY &nbsp;·&nbsp; 2018 – 2019</div>
-                </div>
-              </div>
-              <ul class="tl-bullets">
-                <li>Supported a senior sales team of 20+ MDs serving 200+ hedge fund, asset manager, and insurance clients across fixed income and structured products.</li>
-                <li>Produced General Account-focused peer analysis benchmarking portfolio allocation, yield, and credit quality metrics.</li>
-                <li>Conducted bespoke investment analysis for life insurance CIOs for investment committee and risk review meetings.</li>
-              </ul>
-            </div>
+          <div class="coll-block" data-anim>
+            <p class="coll-label">my ai stack</p>
+            <ul class="coll-list">
+              <li>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="coll-link">Claude</a>
+                <span class="coll-meta">My daily AI layer for thinking, writing, and building</span>
+              </li>
+              <li>
+                <a href="https://granola.so" target="_blank" rel="noopener" class="coll-link">Granola</a>
+                <span class="coll-meta">AI notepad that transforms meeting notes</span>
+              </li>
+              <li>
+                <a href="https://cursor.com" target="_blank" rel="noopener" class="coll-link">Cursor</a>
+                <span class="coll-meta">The IDE that changed how I write code</span>
+              </li>
+              <li>
+                <a href="https://wisprflow.com" target="_blank" rel="noopener" class="coll-link">Wispr Flow</a>
+                <span class="coll-meta">Voice-to-text that actually works everywhere</span>
+              </li>
+              <li>
+                <a href="https://runwayml.com" target="_blank" rel="noopener" class="coll-link">Runway</a>
+                <span class="coll-meta">AI video generation and creative tooling</span>
+              </li>
+              <li>
+                <a href="https://notebooklm.google.com" target="_blank" rel="noopener" class="coll-link">NotebookLM</a>
+                <span class="coll-meta">Research assistant that actually reads your sources</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="coll-block" data-anim>
+            <p class="coll-label">websites</p>
+            <ul class="coll-list">
+              <li>
+                <a href="https://randoma11y.com" target="_blank" rel="noopener" class="coll-link">Randoma11y</a>
+                <span class="coll-meta">Random accessible color palettes — oddly satisfying</span>
+              </li>
+              <li>
+                <a href="https://napkin.ai" target="_blank" rel="noopener" class="coll-link">Napkin</a>
+                <span class="coll-meta">Turns text into clean visual diagrams instantly</span>
+              </li>
+              <li>
+                <a href="https://faces.app" target="_blank" rel="noopener" class="coll-link">Faces</a>
+                <span class="coll-meta">Interactive presentations that use the full power of the web</span>
+              </li>
+              <li>
+                <a href="https://exercism.org" target="_blank" rel="noopener" class="coll-link">Exercism</a>
+                <span class="coll-meta">Coding exercises with real human mentorship</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- top repos for claude code -->
+          <div class="coll-block" data-anim>
+            <p class="coll-label">top repos for claude code</p>
+            <ul class="coll-list">
+              <li>
+                <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener" class="coll-link">Superpowers</a>
+                <span class="coll-meta">20+ battle-tested agentic skills for Claude Code</span>
+              </li>
+              <li>
+                <a href="https://github.com/gsd-build/get-shit-done" target="_blank" rel="noopener" class="coll-link">GSD</a>
+                <span class="coll-meta">Spec-driven development system to eliminate context rot</span>
+              </li>
+              <li>
+                <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener" class="coll-link">Awesome Claude Code</a>
+                <span class="coll-meta">Curated list of skills, hooks, and tools for Claude Code</span>
+              </li>
+              <li>
+                <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener" class="coll-link">UI/UX Pro Max Skill</a>
+                <span class="coll-meta">Professional design intelligence across every major frontend stack</span>
+              </li>
+              <li>
+                <a href="https://github.com/kepano/obsidian-skills" target="_blank" rel="noopener" class="coll-link">Obsidian Skill</a>
+                <span class="coll-meta">Agent skills for Obsidian, by its CEO — markdown, bases, canvas</span>
+              </li>
+            </ul>
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- ===== AI & TECH ===== -->
-    <section id="ai" class="section section--ai">
-      <div class="container">
-        <div class="section-header" data-anim>
-          <h2><span class="text">// ai &amp; tech</span><span class="bar"><i class="fa-solid fa-microchip"></i></span></h2>
-        </div>
-        <p class="section-intro" data-anim>
-          At the forefront of applying AI to investment management, from sourcing and diligence to portfolio operations and firm infrastructure. I don't just invest in AI; I build with it.
-        </p>
-
-        <ul class="ai-grid">
-          <li class="ai-card ai-card--wide" data-anim>
-            <div class="ai-card__inner">
-              <div class="ai-card__label">Strategy</div>
-              <h3 class="ai-card__title">AI Investment Strategy</h3>
-              <p>Lead Olayan's AI-focused venture and growth equity mandate. 100+ opportunities evaluated across foundation models, enterprise AI, and AI-enabled services. Portfolio spans Anthropic, Databricks, Cohere, Nexthop, and Invisible Technologies.</p>
-              <div class="ai-card__stats">
-                <div><strong>$300M+</strong><small>Deployed</small></div>
-                <div><strong>100+</strong><small>Evaluated</small></div>
-                <div><strong>5</strong><small>AI Investments</small></div>
-              </div>
-            </div>
-            <span class="ui-c tl"></span><span class="ui-c tr"></span>
-            <span class="ui-c bl"></span><span class="ui-c br"></span>
-          </li>
-          <li class="ai-card" data-anim>
-            <div class="ai-card__inner">
-              <div class="ai-card__label">Leadership</div>
-              <h3 class="ai-card__title">Internal AI Taskforce</h3>
-              <p>Co-lead the firm's AI Taskforce spanning four workstreams, education, investment, improvement, and protection, driving AI adoption across a $40B+ global investment platform.</p>
-            </div>
-            <span class="ui-c tl"></span><span class="ui-c tr"></span>
-            <span class="ui-c bl"></span><span class="ui-c br"></span>
-          </li>
-          <li class="ai-card" data-anim>
-            <div class="ai-card__inner">
-              <div class="ai-card__label">Infrastructure</div>
-              <h3 class="ai-card__title">DealCloud &amp; MCP Connectors</h3>
-              <p>Redesigned the firm's CRM on DealCloud and built agentic MCP connectors so investment professionals can query deal flow, portfolio metrics, and market intelligence in natural language.</p>
-            </div>
-            <span class="ui-c tl"></span><span class="ui-c tr"></span>
-            <span class="ui-c bl"></span><span class="ui-c br"></span>
-          </li>
-          <li class="ai-card" data-anim>
-            <div class="ai-card__inner">
-              <div class="ai-card__label">Tooling</div>
-              <h3 class="ai-card__title">Python &amp; Claude Code</h3>
-              <p>Leverage Python for financial modeling automation and data analysis. Use Claude Code to build internal investment tooling and accelerate analytical workflows end-to-end.</p>
-            </div>
-            <span class="ui-c tl"></span><span class="ui-c tr"></span>
-            <span class="ui-c bl"></span><span class="ui-c br"></span>
-          </li>
-        </ul>
-
-        <div class="thesis" data-anim>
-          <div class="thesis__header">
-            <h3><span class="text">// investment thesis</span><span class="bar"></span></h3>
-          </div>
-          <ul class="thesis-grid">
-            <li data-anim>
-              <div class="thesis-box">
-                <h4>Foundation Models</h4>
-                <p>The infrastructure layer of the AI revolution. Core models and APIs powering every AI application, winner-takes-most with enormous defensibility.</p>
-                <span class="ui-c tl"></span><span class="ui-c tr"></span>
-                <span class="ui-c bl"></span><span class="ui-c br"></span>
-              </div>
-            </li>
-            <li data-anim>
-              <div class="thesis-box">
-                <h4>Enterprise AI</h4>
-                <p>AI applied to mission-critical workflows. The true monetization wave as AI moves from experimentation to production at enterprise scale.</p>
-                <span class="ui-c tl"></span><span class="ui-c tr"></span>
-                <span class="ui-c bl"></span><span class="ui-c br"></span>
-              </div>
-            </li>
-            <li data-anim>
-              <div class="thesis-box">
-                <h4>AI-Enabled Services</h4>
-                <p>Businesses using AI to dramatically improve unit economics in services verticals, healthcare, legal, finance, and operations.</p>
-                <span class="ui-c tl"></span><span class="ui-c tr"></span>
-                <span class="ui-c bl"></span><span class="ui-c br"></span>
-              </div>
-            </li>
-            <li data-anim>
-              <div class="thesis-box">
-                <h4>AI Infrastructure</h4>
-                <p>The picks and shovels, networking, compute, and developer tooling required to train, deploy, and scale AI models in production.</p>
-                <span class="ui-c tl"></span><span class="ui-c tr"></span>
-                <span class="ui-c bl"></span><span class="ui-c br"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="ai-quote" data-anim>
-          <blockquote>
-            "Any sufficiently advanced technology is indistinguishable from magic."
-          </blockquote>
-          <cite>Arthur C. Clarke</cite>
-        </div>
-
       </div>
     </section>
 
@@ -633,42 +474,21 @@
           <h2><span class="text">// contact</span><span class="bar"><i class="fa-solid fa-envelope"></i></span></h2>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-left" data-anim>
-            <p class="lead">
-              Whether it's about deal flow, AI strategy, building in finance, or just a conversation about the intersection of technology and capital, I'm always open to a discussion.
-            </p>
-            <div class="contact-links">
-              <a href="mailto:nsibal@alumni.cmu.edu" class="contact-link">
-                <span class="contact-link__icon">✉</span>
-                nsibal@alumni.cmu.edu
-              </a>
-              <a href="tel:2012089050" class="contact-link">
-                <span class="contact-link__icon">☎</span>
-                201-208-9050
-              </a>
-            </div>
-          </div>
-          <div class="contact-right" data-anim>
-            <h3 class="sub-heading">Location</h3>
-            <p>New York, NY &nbsp;·&nbsp; The Olayan Group</p>
-            <h3 class="sub-heading" style="margin-top:2rem;">Background</h3>
-            <p>Carnegie Mellon University, B.S. Quantitative Research</p>
-            <div class="city-trail city-trail--sm" style="margin-top:1rem;">
-              <span class="city">Jakarta</span><span class="arrow">→</span>
-              <span class="city">India</span><span class="arrow">→</span>
-              <span class="city">Dubai</span><span class="arrow">→</span>
-              <span class="city">Singapore</span><span class="arrow">→</span>
-              <span class="city">HK</span><span class="arrow">→</span>
-              <span class="city">Pittsburgh</span><span class="arrow">→</span>
-              <span class="city city--now">New York</span>
-            </div>
+        <div class="contact-full" data-anim>
+          <p class="lead">
+            Whether it's about deal flow, AI strategy, building in finance, or just a conversation about the intersection of technology and capital, I'm always open to a discussion.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:nsibal@alumni.cmu.edu" class="contact-link">
+              <span class="contact-link__icon">✉</span>
+              nsibal@alumni.cmu.edu
+            </a>
+            <a href="https://www.linkedin.com/in/neel-sibal-80a197b6" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link__icon"><i class="fa-brands fa-linkedin"></i></span>
+              LinkedIn
+            </a>
           </div>
         </div>
-
-        <footer class="site-footer" data-anim>
-          <p>Neel Sibal &nbsp;·&nbsp; Private Equity &amp; AI &nbsp;·&nbsp; New York &nbsp;·&nbsp; 2025</p>
-        </footer>
 
       </div>
     </section>
@@ -677,6 +497,54 @@
 
   <!-- Page wipe transition overlay -->
   <div class="page-wipe" id="pageWipe"></div>
+
+  <!-- Theme panel -->
+  <div class="theme-panel" id="themePanel" aria-hidden="true">
+    <p class="theme-panel__title">theme</p>
+    <div class="theme-presets">
+
+      <!-- Default -->
+      <button class="theme-preset active"
+        data-accent="#2196f3" data-bg="#ffffff" data-text="#2b2c33"
+        title="Default">
+        <span class="preset-top"    style="background:#2196f3"></span>
+        <span class="preset-bottom" style="background:#ffffff"></span>
+      </button>
+
+      <!-- Sand — warm amber on cream -->
+      <button class="theme-preset"
+        data-accent="#c27b2c" data-bg="#faf8f3" data-text="#2c2416"
+        title="Sand">
+        <span class="preset-top"    style="background:#c27b2c"></span>
+        <span class="preset-bottom" style="background:#faf8f3"></span>
+      </button>
+
+      <!-- Sage — emerald on soft mint -->
+      <button class="theme-preset"
+        data-accent="#16a34a" data-bg="#f4f8f5" data-text="#1a2e22"
+        title="Sage">
+        <span class="preset-top"    style="background:#16a34a"></span>
+        <span class="preset-bottom" style="background:#f4f8f5"></span>
+      </button>
+
+      <!-- Plum — violet on lavender -->
+      <button class="theme-preset"
+        data-accent="#9333ea" data-bg="#faf5ff" data-text="#2d1b45"
+        title="Plum">
+        <span class="preset-top"    style="background:#9333ea"></span>
+        <span class="preset-bottom" style="background:#faf5ff"></span>
+      </button>
+
+      <!-- Rose — crimson on blush -->
+      <button class="theme-preset"
+        data-accent="#e11d48" data-bg="#fff5f6" data-text="#2d1515"
+        title="Rose">
+        <span class="preset-top"    style="background:#e11d48"></span>
+        <span class="preset-bottom" style="background:#fff5f6"></span>
+      </button>
+
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
